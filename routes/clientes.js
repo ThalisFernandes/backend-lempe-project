@@ -11,12 +11,12 @@ const connection = mysql.createConnection(
 function buscarClientes(pool, id){  
         let query = id ? `SELECT * FROM clientes WHERE cliente_id = ${id}`: "SELECT * FROM clientes;";
         let response = pool.query(query, (err, ress)=> ress);
-
+        return response; 
 }
 
 function inserirCliente(pool, data){
     let query = "INSERT INTO contato_clientes(id_cliente, nome_do_contato, telefone_contato,  setor, ramal, sexo, responsavel_certificados, resp_notas_fiscais, resp_orcamentos, receb_emails_ch_lote, receb_emails_sd_lote, cargo, acesso_sistema, alterar_senha, data_nasc) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);"
-    
+
 }   
 
 const clientesRotas = (app)=>{
